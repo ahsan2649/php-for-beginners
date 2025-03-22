@@ -7,16 +7,11 @@
 
 <body>
 
-<h1>Recommended Books</h1>
-
+<h1><?= $business["name"]?></h1>
 
 <ul>
-    <?php foreach ($filteredBooks as $book) : ?>
-        <li>
-            <a href="<?= $book['purchaseUrl']; ?>">
-                <?= $book["name"]; ?> (<?= $book["releaseYear"]; ?>)
-            </a>
-        </li>
+    <?php foreach ($business["categories"] as $category): ?>
+        <li><?= $category ?></li>
     <?php endforeach; ?>
 </ul>
 

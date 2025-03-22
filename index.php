@@ -1,29 +1,25 @@
 <?php
 
-$books = [
-    [
-        "name" => "Do Androids Dream of Electric Sheep",
-        "author" => "Philip K. Dick",
-        "releaseYear" => 1968,
-        "purchaseUrl" => "http://example.com"
-    ],
-    [
-        "name" => "Project Hail Mary",
-        "author" => "Andy Weir",
-        "releaseYear" => 2021,
-        "purchaseUrl" => "http://example.com"
-    ],
-    [
-        "name" => "The Martian",
-        "author" => "Andy Weir",
-        "releaseYear" => 2011,
-        "purchaseUrl" => "http://example.com"
-    ]
+
+$name = "Laracasts";
+$cost = 15;
+
+$business = [
+    "name" => "Laracasts",
+    "cost" => 15,
+    "categories" => ["Testing", "PHP", "JavaScript"]
 ];
 
-$filteredBooks = array_filter($books, function ($book) {
-    return $book["author"] === "Andy Weir";
-});
+if ($business["cost"] > 99){
+    echo "Not interested";
+}
 
+foreach ($business["categories"] as $category) {
+    echo $category;
+}
+
+function register($user){
+
+}
 
 require "index.view.php";
