@@ -1,15 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Demo</title>
-</head>
-
-<body>
-
-<h1>Recommended Books</h1>
-
 <?php
+
 $books = [
     [
         "name" => "Do Androids Dream of Electric Sheep",
@@ -31,32 +21,9 @@ $books = [
     ]
 ];
 
-//function filter($items,$fn){
-//    $filteredItems = [];
-//
-//    foreach ($items as $item){
-//        if($fn($item)){
-//            $filteredItems[] = $item;
-//        }
-//    }
-//    return $filteredItems;
-//}
-
-$filteredBooks = array_filter($books, function($book){
+$filteredBooks = array_filter($books, function ($book) {
     return $book["author"] === "Andy Weir";
-})
-?>
+});
 
-<ul>
-    <?php foreach ($filteredBooks as $book) : ?>
-            <li>
-                <a href="<?= $book['purchaseUrl']; ?>">
-                    <?= $book["name"]; ?> (<?= $book["releaseYear"]; ?>)
-                </a>
-            </li>
-    <?php endforeach; ?>
-</ul>
 
-</body>
-
-</html>
+require "index.view.php";
