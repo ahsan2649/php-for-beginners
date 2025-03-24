@@ -1,9 +1,10 @@
 <?php
 
+
+use Core\App;
 use Core\Database;
 
-$config = require base_path( "config.php");
-$db = new Database($config['database'], "root", "");
+$db = App::resolve(Database::class);
 
 
 $heading = "My Notes";
