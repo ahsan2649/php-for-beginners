@@ -2,7 +2,7 @@
 
 
 $config = require "config.php";
-$db = new Database($config['database'], "root", "");
+$db = new Database($config['database'], "root", "26491910");
 
 
 $heading = "My Notes";
