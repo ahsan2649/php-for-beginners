@@ -12,11 +12,13 @@ function dd($value)
     die();
 }
 
-function urlIs($value){
+function urlIs($value)
+{
     return $_SERVER["REQUEST_URI"] === $value;
 }
 
-function abort($code = 404){
+function abort($code = 404)
+{
     http_response_code($code);
 
     view("{$code}.php");
@@ -32,7 +34,8 @@ function authorize($condition, $status = Response::FORBIDDEN)
 
 }
 
-function base_path($path){
+function base_path($path)
+{
     return BASE_PATH . $path;
 }
 
@@ -46,4 +49,9 @@ function redirect($path)
 {
     header("location: {$path}");
     exit();
+}
+
+function old($key, $default = "")
+{
+    return Core\Session::get("old")[$key] ?? $default;
 }
