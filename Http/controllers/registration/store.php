@@ -43,7 +43,7 @@ if ($user) {
     ]);
 
     // mark that the user has logged in
-    login(["email" => $email]);
+    new \Core\Authenticator()->login(["email" => $email]);
 
     header("location: /");
     exit();
